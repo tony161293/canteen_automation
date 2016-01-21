@@ -1,0 +1,46 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Homepage</title>
+{% load staticfiles %}
+<link rel="stylesheet" href="/static/style.css" type="text/css" />
+<body>
+<div id="header1">
+Register for the online reservation system of canteen</div>
+<div id="left">
+{{profile_form.errors}}
+<form action="/register/" method="POST">
+{% csrf_token %}
+{% if registered %}
+Thank you for registering
+{% else %}
+<table>
+<div id="left-inner">
+<tr>
+<td>Name:</td>
+<td>{{profile_form.Name}}</td>
+</tr>
+<tr>
+<td>Admn no:</td>
+<td>{{profile_form.Admn_no}}</td>
+</tr>
+<tr>
+<td>Batch:</td>
+<td>{{profile_form.Batch}}</td>
+</tr>
+<tr>
+<td>Username:</td>
+<td>{{user_form.username}}</td>
+</tr>
+<tr>
+<td>Password:</td>
+<td>{{user_form.password}}</td>
+</tr>
+</div>
+</table>
+<div class="clear"></div>
+<input type="submit" style="margin-top:6px; margin-left:4px;" value="Click here to register"/>
+</form>
+{%endif%}
+</div>
+</body>
+</html>

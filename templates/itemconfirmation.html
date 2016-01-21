@@ -1,0 +1,22 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Homepage</title>
+{% load staticfiles %}
+<link rel="stylesheet" href="/static/style.css" type="text/css" />
+<body>
+<div id="header1">{{item.itemName}}</div>>
+<div id="left">
+<form action="" method="POST">
+<div id="left-inner">
+Enter the count:
+</div>
+<div id="right-inner">{{count_form.count}}
+</div>
+<div class="clear"></div>
+<input type="submit" value="Buy Item"/>
+</form>
+<p style="margin-top:3px;"><a href="/logout">Logout to go to homepage</a></p>
+<p style="margin-top:3px;"><a href="/fooditems">Return to list of items</a></p>
+</div>
+</body>
+</html>

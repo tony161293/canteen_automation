@@ -1,0 +1,31 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Homepage</title>
+{% load staticfiles %}
+<link rel="stylesheet" href="/static/style.css" type="text/css" />
+<body>
+<div id="header1">
+Items today</div>
+<div id="left">
+<h3 style="color:red;">Dated: {{date}}</h3>
+<table>
+<tr>
+<th>Admn No</th>
+<th>Item Name</th>
+<th>Count</th>
+</tr>
+{% for order_detail in order_details %}
+{% if order_details.order_date == dated %}
+<tr>
+<td>{{order_detail.useradno}}</td>
+<td>{{order_detail.itemname}}</td>
+<td>{{order_detail.count}}</td>
+</tr>
+{%endif%}
+{%endfor%}
+</table>
+<p><a href="/admin_page">Return to admin page</a></p>
+<p><a href="/logout">Logout to go to homepage</a></p>
+</div>
+</body>
+</html>

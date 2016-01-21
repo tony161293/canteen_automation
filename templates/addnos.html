@@ -1,0 +1,26 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Added</title>
+{% load staticfiles %}
+<link rel="stylesheet" href="/static/style.css" type="text/css" />
+<body>
+<div id="header1">
+Edit item number
+</div>
+<div id="left">
+<h2>{{item.itemName}}</h2>
+<form action="" method="POST">
+<div id="left-inner">
+<p>Enter nos:</p>
+</div>
+<div id="right-inner">
+<p>{{addnos.number}}</p>
+</div>
+<input type="submit" value="Submit"/>
+</form>
+<p style="margin-top:20px;"><a href="/admin_page/edit_item">Edit another item number</a></p>
+<p style="margin-top:20px;"><a href="/admin_page">Return to admin page</a></p>
+<p style="margin-top:3px;"><a href="/logout">Logout to go to homepage</a></p>
+</div>
+</body>
+</html>

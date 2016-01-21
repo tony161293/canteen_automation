@@ -1,0 +1,25 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Homepage</title>
+{% load staticfiles %}
+<link rel="stylesheet" href="/static/style.css" type="text/css" />
+<body>
+<div id="header1">User Credit Updation</div>
+<div id="left">
+<form action="" method="POST">
+<div id="left-inner">
+<p>Enter Admission number:</p>
+<p>Credit amount to be added:</p>
+</div>
+<div id="right-inner">
+<p>{{userupdate.useradno}}</p>
+<p>{{userupdate.add_credit}}</p>
+</div>
+<div class="clear"></div>
+<input type="submit" value="Update here"/>
+</form>
+<p style="margin-top:20px;"><a href="/admin_page">Return to admin page</a></p>
+<p style="margin-top:3px;"><a href="/logout">Logout to go to homepage</a></p>
+</div>
+</body>
+</html>

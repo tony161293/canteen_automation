@@ -1,0 +1,44 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Homepage</title>
+{% load staticfiles %}
+<link rel="stylesheet" href="/static/style.css" type="text/css" />
+<body>
+<div id="header1">Hello {{full_name}}
+</div>
+<div id="left">
+<p style="font-size:16pt;">Your credit balance is {{Credit}}
+<h2><u>Food Items Available, Click to buy a food item (The cost will be reduced form you account)</u></h2>
+<table>
+<tr>
+<th>Item Name</th>
+<th>Abailability</th>
+<th>Cost(INR)</th>
+<th>Date published</th>
+</tr>
+{% for items in item %}
+{% if items.number == 0%}
+<tr>
+
+<td>{{items.itemName}}</td>
+<td> not available</td>
+<td>{{items.cost}}</td>
+<td>{{items.pub_date}}</td>
+</tr>
+{%else%}
+<tr>
+<td>
+<a href="/fooditems/{{items.itemName}}/">
+{{items.itemName}}</a></td>
+<td> {{items.number}} </td>
+<td>   {{items.cost}}</td>
+<td>{{items.pub_date}}</td>
+</tr>
+{%endif%}
+{% endfor %}
+</table>
+<p style="margin: 20px 0 15px 30px;"><a href="/logout/">Logout</a></p>
+</div>
+</body>
+
+</html>

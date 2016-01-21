@@ -1,0 +1,29 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Homepage</title>
+{% load staticfiles %}
+<link rel="stylesheet" href="/static/style.css" type="text/css" />
+<body>
+<div id="header1">Select an item to remove the item</div>
+<div id="left">
+<table>
+<tr>
+<th>Item Name</th>
+<th>Number</th>
+</tr>
+{% for items in item %}
+<tr>
+<td>
+<a href="/admin_page/remove_item/{{items.itemName}}/">
+{{items.itemName}}</a>
+</td>
+
+ <td> {{items.number}}</td>
+ <tr>
+{%endfor%}
+</table>
+<p style="margin-top:70px;"><a href="/admin_page">Return to admin page</a></p>
+<p style="margin-top:3px;"><a href="/logout">Logout to go to homepage</a></p>
+</div>
+</body>
+</html>
